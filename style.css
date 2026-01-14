@@ -57,3 +57,11 @@ button:hover {
     transform: translateY(0);
   }
 }
+
+#page1, #page2, #page3 {
+  animation: fadeIn 0.8s ease;
+}
+
+p {
+  line-height: 1.6;
+}

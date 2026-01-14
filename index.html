@@ -9,57 +9,47 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("PUBLIC_KEY_QUI");
-    })();
-  </script>
 </head>
 
 <body>
   <div class="container">
+
     <!-- PAGINA 1: COVER -->
-<div id="page1">
-  <h1>Ho una cosa per te </h1>
-  <p>Prenditi un momento…</p>
-  <button onclick="goToPage(2)">Continua</button>
-</div>
+    <div id="page1">
+      <h1>Ho una cosa per te ❤️</h1>
+      <p>Prenditi un momento…</p>
+      <button onclick="goToPage(2)">Continua</button>
+    </div>
 
-<!-- PAGINA 2: MESSAGGIO -->
-<div id="page2" style="display:none;">
-  <h1>Un piccolo messaggio 💌</h1>
-  <p>
-    Premetto che ho pensato molto a questo regalo,<br>
-    e pur sapendo quanto tu sia negata a prendere decisioni<br>
-    ho deciso di sfidare la sorte.<br>
-    Detto questo "apri" il tuo regalo.
-  </p>
+    <!-- PAGINA 2: MESSAGGIO -->
+    <div id="page2" style="display:none;">
+      <h1>Un piccolo messaggio 💌</h1>
+      <p>
+        Premetto che ho pensato molto a questo regalo,<br>
+        e pur sapendo quanto tu sia negata a prendere decisioni<br>
+        ho deciso di sfidare la sorte.<br>
+        Detto questo "apri" il tuo regalo.
+      </p>
 
-  <button onclick="goBack()">← Indietro</button>
-  <button onclick="goToPage(3)">Iniziamo</button>
-  <button class="back-btn" onclick="goBack()">← Indietro</button>
-</div>
+      <button onclick="goToPage(3)">Iniziamo</button>
+      <button class="back-btn" onclick="goBack()">← Indietro</button>
+    </div>
 
+    <!-- PAGINA 3: INIZIO GIOCO -->
+    <div id="page3" style="display:none;">
+      <h1>Scegli la nostra prossima meta 🌍</h1>
+      <p>Da dove iniziamo?</p>
 
-<!-- PAGINA 3: INIZIO GIOCO -->
-<div id="page3" style="display:none;">
-  <h1>Scegli la nostra prossima meta 🌍</h1>
-  <p>Da dove iniziamo?</p>
+      <div class="cities">
+        <button onclick="selectCity('Parigi')">Parigi 🇫🇷</button>
+        <button onclick="selectCity('Venezia')">Venezia 🇮🇹</button>
+        <button onclick="selectCity('Barcellona')">Barcellona 🇪🇸</button>
+        <button onclick="selectCity('Praga')">Praga 🇨🇿</button>
+      </div>
 
-  <div class="cities">
-    <button onclick="selectCity('Parigi')">Parigi 🇫🇷</button>
-    <button onclick="selectCity('Venezia')">Venezia 🇮🇹</button>
-    <button onclick="selectCity('Barcellona')">Barcellona 🇪🇸</button>
-    <button onclick="selectCity('Praga')">Praga 🇨🇿</button>
-  </div>
+      <button class="back-btn" onclick="goBack()">← Indietro</button>
+    </div>
 
-  <button onclick="goBack()">← Indietro</button>
-  <button class="back-btn" onclick="goBack()">← Indietro</button>
-</div>
-</div>
   </div>
 
   <script src="script.js"></script>

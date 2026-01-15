@@ -14,13 +14,13 @@ function goToPage(pageNumber) {
 function goBack() {
   if (currentPage > 1) {
     goToPage(currentPage - 1);
-    goToPage(4);
   }
 }
 
 function selectCity(city) {
   selectedCity = city;
   alert("Hai scelto " + city + " 💖");
+     goToPage(4);
 }
 let selectedStartDate = "";
 let selectedEndDate = "";

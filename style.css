@@ -9,35 +9,37 @@ body {
 }
 
 .container {
+  position: relative;
   background: white;
   padding: 50px 40px;
   border-radius: 25px;
   max-width: 500px;
+  width: 90%;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  animation: fadeIn 1.2s ease;
+  animation: fadeIn 1s ease;
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
   color: #8b1e3f;
-  margin-bottom: 15px;
 }
 
 p {
   color: #444;
-  font-size: 16px;
-  margin-bottom: 30px;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
 button {
   background: #f7c6d0;
   color: #8b1e3f;
   border: none;
-  padding: 15px 35px;
+  padding: 14px 30px;
   border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
+  margin: 10px;
   transition: all 0.3s ease;
 }
 
@@ -47,91 +49,10 @@ button:hover {
   transform: scale(1.05);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#page1, #page2, #page3 {
-  animation: fadeIn 0.8s ease;
-}
-
-p {
-  line-height: 1.6;
-}
-button {
-  margin: 10px;
-}
-
-button.back {
-  background: transparent;
-  border: 2px solid #8b1e3f;
-}
-.container {
-  position: relative;
-}
-
-/* Bottone indietro */
-.back-btn {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  color: #8b1e3f;
-  font-size: 14px;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: all 0.3s ease;
-}
-
-.back-btn:hover {
-  opacity: 1;
-  transform: translateX(-3px);
-}
-/*FUNNZIONE DATA*/
-function selectDate() {
-  const input = document.getElementById("startDate");
-  const date = new Date(input.value);
-
-  if (isNaN(date)) return;
-
-  const month = date.getMonth() + 1; // 1-12
-
-  if (month < 6 || month > 8) {
-    alert("Puoi scegliere solo una data tra giugno, luglio e agosto 💛");
-    input.value = "";
-    return;
-  }
-
-  selectedStartDate = input.value;
-
-  const endDate = new Date(date);
-  endDate.setDate(date.getDate() + 1);
-
-  selectedEndDate = endDate.toISOString().split("T")[0];
-
-  document.getElementById("datePreview").innerText =
-    `Dal ${formatDate(selectedStartDate)} al ${formatDate(selectedEndDate)}`;
-
-  // piccolo delay, poi avanti
-  setTimeout(() => {
-    goToPage(5);
-  }, 1200);
-}
-
-input[type="date"] {
-  padding: 12px 20px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  cursor: pointer;
+.cities button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
 }
 
 .calendar-wrapper {
@@ -145,4 +66,32 @@ input[type="date"] {
   font-size: 16px;
   border-radius: 12px;
   border: 2px solid #f7c6d0;
+  cursor: pointer;
+}
+
+.back-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #8b1e3f;
+  font-size: 14px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

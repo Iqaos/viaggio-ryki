@@ -14,6 +14,7 @@ function goToPage(pageNumber) {
 function goBack() {
   if (currentPage > 1) {
     goToPage(currentPage - 1);
+    goToPage(4);
   }
 }
 

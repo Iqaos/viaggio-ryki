@@ -4,71 +4,70 @@
   <meta charset="UTF-8">
   <title>Il nostro viaggio ❤️</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="container">
 
-    <!-- PAGINA 1: COVER -->
+    <!-- PAGINA 1 -->
     <div id="page1">
       <h1>Ho una cosa per te ❤️</h1>
       <p>Prenditi un momento…</p>
       <button onclick="goToPage(2)">Continua</button>
     </div>
 
-    <!-- PAGINA 2: MESSAGGIO -->
+    <!-- PAGINA 2 -->
     <div id="page2" style="display:none;">
       <h1>Un piccolo messaggio 💌</h1>
       <p>
-        Premetto che ho pensato molto a questo regalo,<br>
-        e pur sapendo quanto tu sia negata a prendere decisioni<br>
-        ho deciso di sfidare la sorte.<br>
-        Detto questo "apri" il tuo regalo.
+        Ho pensato molto a questo regalo.<br>
+        So che scegliere non è il tuo forte…<br>
+        quindi ho deciso di rendere tutto più divertente 💖
       </p>
-
       <button onclick="goToPage(3)">🎁 Aprimi 🎁</button>
       <button class="back-btn" onclick="goBack()">← Indietro</button>
     </div>
 
-    <!-- PAGINA 3: INIZIO GIOCO -->
+    <!-- PAGINA 3 -->
     <div id="page3" style="display:none;">
-      <h1>Scegli il nostr primo viaggio🌍</h1>
-      <p>Da dove iniziamo?</p>
-
+      <h1>Scegli la meta 🌍</h1>
       <div class="cities">
         <button onclick="selectCity('Roma')">Roma 🇮🇹</button>
         <button onclick="selectCity('Firenze')">Firenze 🇮🇹</button>
         <button onclick="selectCity('Napoli')">Napoli 🇮🇹</button>
         <button onclick="selectCity('Milano')">Milano 🇮🇹</button>
       </div>
+      <button onclick="goToPage(4)">Continua</button>
+      <button class="back-btn" onclick="goBack()">← Indietro</button>
+    </div>
 
+    <!-- PAGINA 4 -->
+    <div id="page4" style="display:none;">
+      <h1>Scegli quando partire 📅</h1>
+      <p>Viaggio di 2 giorni / 1 notte</p>
+
+      <div class="calendar-wrapper">
+        <input type="date" id="startDate" onchange="selectDate()">
+      </div>
+
+      <p id="datePreview"></p>
+
+      <button onclick="goToPage(5)">Continua</button>
+      <button class="back-btn" onclick="goBack()">← Indietro</button>
+    </div>
+
+    <!-- PAGINA 5 -->
+    <div id="page5" style="display:none;">
+      <h1>Riepilogo 💖</h1>
+      <p id="summary"></p>
+      <p>Non vedo l’ora di partire con te ✨</p>
       <button class="back-btn" onclick="goBack()">← Indietro</button>
     </div>
 
   </div>
-<!-- PAGINA 4: SCELTA DATA -->
-<div id="page4" style="display:none;">
-  <h1>Scegli quando partire 📅</h1>
-  <p>Il viaggio durerà 2 giorni / 1 notte</p>
 
-  <input
-    type="date"
-    id="startDate"
-    onchange="selectDate()"
-  >
-
-  <p id="datePreview" style="margin-top:20px;"></p>
-
-  <button class="back-btn" onclick="goBack()">← Indietro</button>
-</div> 
-div class="calendar-wrapper">
-</div>
-  
   <script src="script.js"></script>
 </body>
-</html>
+<

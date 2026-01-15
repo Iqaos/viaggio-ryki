@@ -95,3 +95,33 @@ button.back {
   opacity: 1;
   transform: translateX(-3px);
 }
+/*FUNNZIONE DATA*/
+function selectDate() {
+  const input = document.getElementById("startDate");
+  const date = new Date(input.value);
+
+  if (isNaN(date)) return;
+
+  const month = date.getMonth() + 1; // 1-12
+
+  if (month < 6 || month > 8) {
+    alert("Puoi scegliere solo una data tra giugno, luglio e agosto 💛");
+    input.value = "";
+    return;
+  }
+
+  selectedStartDate = input.value;
+
+  const endDate = new Date(date);
+  endDate.setDate(date.getDate() + 1);
+
+  selectedEndDate = endDate.toISOString().split("T")[0];
+
+  document.getElementById("datePreview").innerText =
+    `Dal ${formatDate(selectedStartDate)} al ${formatDate(selectedEndDate)}`;
+
+  // piccolo delay, poi avanti
+  setTimeout(() => {
+    goToPage(5);
+  }, 1200);
+}

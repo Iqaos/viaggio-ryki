@@ -67,3 +67,71 @@ function formatDate(dateStr) {
     year: "numeric"
   });
 }
+const year = new Date().getFullYear();
+let startDateObj = null;
+
+document.querySelectorAll(".month").forEach(monthEl => {
+  const monthIndex = parseInt(monthEl.dataset.month);
+  const daysContainer = monthEl.querySelector(".days");
+
+  const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const date = new Date(year, monthIndex, day);
+    const div = document.createElement("div");
+    div.classList.add("day");
+    div.innerText = day;
+
+    // disabilita date passate
+    if (date < new Date().setHours(0,0,0,0)) {
+      div.classList.add("disabled");
+    }
+
+    div.onclick = () => selectCustomDate(date, div);
+    daysContainer.appendChild(div);
+  }
+});
+
+function selectCustomDate(date, element) {
+  document.querySelectorAll(".day").forEach(d => {
+    d.classList.remove("selected", "range");
+  });
+
+  startDateObj = date;
+  selectedStartDate = formatISO(date);
+
+  const end = new Date(date);
+  end.setDate(date.getDate() + 1);
+  selectedEndDate = formatISO(end);
+
+  element.classList.add("selected");
+
+  document.querySelectorAll(".day").forEach(d => {
+    const dDate = getDateFromDay(d);
+    if (dDate && dDate.getTime() === end.getTime()) {
+      d.classList.add("range");
+    }
+  });
+
+  document.getElementById("datePreview").innerText =
+    `Dal ${formatDate(selectedStartDate)} al ${formatDate(selectedEndDate)}`;
+
+  setTimeout(() => {
+    updateSummary();
+    goToPage(5);
+  }, 1200);
+}
+
+function formatISO(date) {
+  return date.toISOString().split("T")[0];
+}
+
+function getDateFromDay(dayEl) {
+  const monthEl = dayEl.closest(".month");
+  if (!monthEl) return null;
+
+  const month = parseInt(monthEl.dataset.month);
+  const day = parseInt(dayEl.innerText);
+
+  return new Date(year, month, day);
+}

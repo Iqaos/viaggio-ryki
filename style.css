@@ -21,9 +21,9 @@ body {
 .container {
   position: relative;
   background: white;
-  padding: 50px 40px 70px;
+  padding: 70px 60px 90px;
   border-radius: 25px;
-  max-width: 500px;
+  max-width: 700px;
   width: 90%;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
@@ -46,7 +46,7 @@ p {
   color: #444;
   line-height: 1.6;
   margin-bottom: 25px;
-  font-size: 15px;
+  font-size: 30px;
 }
 
 /* BOTTONI */

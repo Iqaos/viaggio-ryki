@@ -43,21 +43,32 @@
       <button class="back-btn" onclick="goBack()">← Indietro</button>
     </div>
 
-    <!-- PAGINA 4 -->
-    <div id="page4" style="display:none;">
-      <h1>Scegli quando partire 📅</h1>
-      <p>Viaggio di 2 giorni / 1 notte</p>
+   <!-- PAGINA 4 -->
+<div id="page4" style="display:none;">
+  <h1>Scegli quando partire 📅</h1>
+  <p>Viaggio di 2 giorni / 1 notte</p>
 
-      <div class="calendar-wrapper">
-        <input type="date" id="startDate" onchange="selectDate()">
-      </div>
-
-      <p id="datePreview"></p>
-
-      <button onclick="goToPage(5)">Continua</button>
-      <button class="back-btn" onclick="goBack()">← Indietro</button>
+  <div class="calendar">
+    <div class="month" data-month="5">
+      <h3>Giugno</h3>
+      <div class="days"></div>
     </div>
 
+    <div class="month" data-month="6">
+      <h3>Luglio</h3>
+      <div class="days"></div>
+    </div>
+
+    <div class="month" data-month="7">
+      <h3>Agosto</h3>
+      <div class="days"></div>
+    </div>
+  </div>
+
+  <p id="datePreview"></p>
+
+  <button class="back-btn" onclick="goBack()">← Indietro</button>
+</div>
     <!-- PAGINA 5 -->
     <div id="page5" style="display:none;">
       <h1>Riepilogo 💖</h1>

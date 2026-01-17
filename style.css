@@ -1,117 +1,57 @@
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(135deg, #fff6ee, #f7c6d0);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 .container {
-  position: relative;
   background: white;
-  padding: 50px 40px;
-  border-radius: 25px;
-  max-width: 500px;
-  width: 90%;
+  padding: 40px;
+  border-radius: 20px;
+  width: 320px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  color: #8b1e3f;
-}
-
-p {
-  color: #444;
-  line-height: 1.6;
+  position: relative;
 }
 
 button {
-  background: #f7c6d0;
-  color: #8b1e3f;
-  border: none;
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
   margin: 10px;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background: #8b1e3f;
-  color: white;
-  transform: scale(1.05);
-}
-
-.cities button {
-  width: 100%;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: #f7c6d0;
+  cursor: pointer;
 }
 
 .back-btn {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: transparent;
-  color: #8b1e3f;
-  font-size: 14px;
-  opacity: 0.6;
+  bottom: 15px;
+  right: 15px;
+  background: none;
 }
 
-.calendar {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin-top: 20px;
-}
-
-.weekdays {
+.calendar .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  font-size: 12px;
-  opacity: 0.6;
-}
-
-.days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 8px;
+  gap: 6px;
 }
 
 .day {
+  padding: 10px;
   background: #fff6ee;
-  padding: 10px 0;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   position: relative;
 }
 
-.day:hover {
-  background: #f7c6d0;
-}
+.day.selected { background: #8b1e3f; color: white; }
+.day.range { background: #f7c6d0; }
 
-.day.selected {
-  background: #8b1e3f;
-  color: white;
-}
-
-.day.range {
-  background: #f7c6d0;
-}
-
-.day.disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-/* CUORI */
 .day.selected::after {
   content: "❤️";
   position: absolute;

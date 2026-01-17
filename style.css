@@ -94,9 +94,10 @@ button:active {
 
 /* BOTTONE INDIETRO */
 .back-btn {
-  position: absolute;
-  bottom: 20px;
+  position: fixed;
+  bottom: 25px;
   right: 25px;
+  z-index: 100;
   background: none;
   border: none;
   color: #8b1e3f;

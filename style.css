@@ -8,6 +8,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
   position: relative;
   background: white;
@@ -55,20 +59,7 @@ button:hover {
   margin: 10px 0;
 }
 
-.calendar-wrapper {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-input[type="date"] {
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 12px;
-  border: 2px solid #f7c6d0;
-  cursor: pointer;
-}
-
+/* Bottone indietro */
 .back-btn {
   position: absolute;
   bottom: 20px;
@@ -85,16 +76,7 @@ input[type="date"] {
   opacity: 1;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* CALENDARIO */
 .calendar {
   display: flex;
   flex-direction: column;
@@ -105,6 +87,19 @@ input[type="date"] {
 .month h3 {
   color: #8b1e3f;
   margin-bottom: 10px;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #8b1e3f;
+  opacity: 0.6;
+}
+
+.weekdays span {
+  text-align: center;
 }
 
 .days {
@@ -120,6 +115,7 @@ input[type="date"] {
   cursor: pointer;
   font-size: 14px;
   transition: all 0.25s ease;
+  position: relative;
 }
 
 .day:hover {
@@ -139,22 +135,8 @@ input[type="date"] {
   opacity: 0.3;
   pointer-events: none;
 }
-.weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  margin-bottom: 8px;
-  font-size: 13px;
-  color: #8b1e3f;
-  opacity: 0.6;
-}
 
-.weekdays span {
-  text-align: center;
-}
-.day {
-  position: relative;
-}
-
+/* CUORI */
 .day.selected::after {
   content: "❤️";
   position: absolute;
@@ -169,4 +151,15 @@ input[type="date"] {
   bottom: -6px;
   right: -6px;
   font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

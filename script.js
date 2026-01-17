@@ -59,12 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         div.classList.add("selected");
 
-        document.querySelectorAll(".day").forEach(el => {
-          const m = el.closest(".month").dataset.month;
-          if (parseInt(el.innerText) === end.getDate() && parseInt(m) === end.getMonth()) {
-            el.classList.add("range");
-          }
-        });
+     document.querySelectorAll(".day").forEach(el => {
+       const monthEl = el.closest(".month");
+       if (!monthEl) return;
+
+       const month = parseInt(monthEl.dataset.month);
+       const day = parseInt(el.innerText);
+
+       if (month === end.getMonth() && day === end.getDate()) {
+       el.classList.add("range");
+  }
+});
 
         document.getElementById("datePreview").innerText =
           `Dal ${formatDate(selectedStartDate)} al ${formatDate(selectedEndDate)}`;
